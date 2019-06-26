@@ -58,14 +58,18 @@ or
 - df.legal_drinker = df.legal_drinker.astype('bool')
 - df.info()
 - def majority(x):
-    if x > 17:
-        return True
-    else:
-        return False
+-    if x > 17:
+-       return True
+-     else:
+-        return False
         
 - df['legal_drinker'] = df.age.apply(majority)
 - df.legal_drinker
 
+
+*Multiply every number of the dataset by 10. *
+- applymap() Apply a function to a Dataframe elementwise
+- df.applymap(lambda x: x*10)
 
 *Import the necessary libraries*
 
