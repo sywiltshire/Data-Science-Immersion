@@ -1,6 +1,6 @@
-# My Journey to Data Science Immersion
+## My Journey to Data Science Immersion
 
-## The exciting world of Data Science started on April 20, 2019 at Divergence Academy
+### The exciting world of Data Science started on April 20, 2019 at Divergence Academy
 My instructors for class topic are:
 - Sravan Ankaraju - _Modeling for Inference, Modeling for Predicton_
 - Marcel Samuel - _SQL_
