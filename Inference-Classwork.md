@@ -27,6 +27,30 @@
     print(name)
     print(grp)
 
+
+### 04_apply_student_alcohol_consumption_answers
+
+*For the purpose of this exercise slice the dataframe from 'school' until the 'guardian' column*
+- df.columns
+- df.info()
+- df.loc[:,'school':'guardian']
+
+*Create a lambda function that captalize strings.*
+- def word_up(x):
+-    return x.upper()
+or
+- word_up = (lambda x: x.upper())
+or
+- df.Mjob.str.upper()
+- df.Fjob.str.upper()
+
+*Capitalize both Mjob and Fjob (haven't been able to get lambda to work*
+- df.Mjob.apply(word_up),df.Fjob.apply(word_up)
+
+* Print the last elements of the data set.*
+- df.tail()
+
+
 *Import the necessary libraries*
 
 import pandas as pd
