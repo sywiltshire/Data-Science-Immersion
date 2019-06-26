@@ -35,20 +35,36 @@
 - df.info()
 - df.loc[:,'school':'guardian']
 
-*Create a lambda function that captalize strings.*
+*Create a lambda function that captalize strings.  Suggested to put function name in CAPITAL LETTERS for readability*
 - def word_up(x):
 -    return x.upper()
+
+
+*Capitalize both Mjob and Fjob*
+- df.Mjob.apply(word_up),df.Fjob.apply(word_up)
 or
 - word_up = (lambda x: x.upper())
 or
 - df.Mjob.str.upper()
 - df.Fjob.str.upper()
 
-*Capitalize both Mjob and Fjob (haven't been able to get lambda to work*
-- df.Mjob.apply(word_up),df.Fjob.apply(word_up)
-
 * Print the last elements of the data set.*
 - df.tail()
+
+- df.Mjob = df.Mjob.apply(word_up)
+- df.Fjob = df.Fjob.apply(word_up)
+
+*Create a function called majority that return a boolean value to a new column called legal_drinker*
+- df.legal_drinker = df.legal_drinker.astype('bool')
+- df.info()
+- def majority(x):
+    if x > 17:
+        return True
+    else:
+        return False
+        
+- df['legal_drinker'] = df.age.apply(majority)
+- df.legal_drinker
 
 
 *Import the necessary libraries*
