@@ -71,6 +71,42 @@ or
 - applymap() Apply a function to a Dataframe elementwise
 - df.applymap(lambda x: x*10)
 
+### 05_merge_cars_answers
+
+*Ops it seems our first dataset has some unnamed blank columns, fix cars1*
+- cars1 = []
+- specific_cols = ['mpg', 'cylinders', 'displacement', 'horsepower', 'weight', 'acceleration', 'model', 'origin', 'car']
+- cars1 = pd.read_csv('../data/cars1.csv', usecols=specific_cols)
+- cars1.head()
+
+*Join cars1 and cars2 into a single DataFrame called cars*
+- cars = []
+- cars = pd.concat([cars1, cars2])
+- cars
+
+### Frequently used features
+*MAPexisting values to a different set of values*
+- users['is_male'] = users.gender.map({'F':0, 'M':1})
+
+*# change the data type of a column*
+- drinks['beer'] = drinks.beer.astype('float')
+
+*# GET DUMMIES create dummy variables for 'continent' and exclude first dummy column*
+- continent_dummies = pd.get_dummies(drinks.continent, prefix='cont').iloc[:, 1:]
+
+*# CONCATENATE two DataFrames (axis=0 for rows, axis=1 for columns)*
+- drinks = pd.concat([drinks, continent_dummies], axis=1)
+
+*# display a cross-tabulation of two Series*
+- pd.crosstab(drinks.country, drinks.beer_level)
+
+- drinks.loc[drinks.beer.between(101, 200), 'beer_level'] = 'med'     # change 101-200 to 'med'
+- drinks.loc[drinks.beer.between(201, 400), 'beer_level'] = 'high'    # change 201-400 to 'high'
+
+*# convert 'beer_level' into the 'CATEGORY' data type*
+- drinks['beer_level'] = pd.Categorical(drinks.beer_level, categories=['low', 'med', 'high'])
+
+
 *Import the necessary libraries*
 
 import pandas as pd
