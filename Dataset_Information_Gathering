@@ -1,0 +1,27 @@
+iris.head()
+
+iris.shape
+
+iris.info()
+
+iris.species.value_counts()
+
+iris.isnull().sum()
+
+iris.describe()
+
+iris.groupby('species').mean()  # use groupby to look for differences between the species
+
+iris.groupby('species').describe()
+
+iris.sort_values('sepal_length').values or iris.sort_values('sepal_length') or iris.sort_values(by=['sepal_length']).values drinks.beer.sort_values().values # use sorting to look for differences between the species
+
+plt.style.use('fivethirtyeight') # dsplay plot style
+
+iris.groupby('species')['petal_width'].plot(kind='hist', grid=True, legend=True);  #display histgram
+
+iris.petal_width.hist(by=iris.species, sharex=True, sharey=True) # use plotting to look for differences between the species
+
+iris.petal_width.hist(by=iris.species, sharex=True, sharey=True)
+
+
