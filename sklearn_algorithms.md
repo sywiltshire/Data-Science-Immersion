@@ -1,4 +1,4 @@
-*KNeighborsClassifier works for classification and regression problem prediction*
+### KNeighborsClassifier works for classification and regression problem prediction
 
 #step. 1 #classify the modeling you want to use & import the class you want to use
 
@@ -30,13 +30,13 @@ knn.predict_proba(test_dataframe)
 - Sensitive to the scale of the data
 - Accuracy is (generally) not competitive with the best supervised learning methods
 
-*Model Evaulation Metrics*
+### Model Evaulation Metrics
 
 from sklearn import metrics
 
 print (metrics.accuracy_score(y, y_pred))  y_pred is the outcome of knn.predict(test_dataframe)
 
-*Model Selection aka train_test_split*
+### Model Selection aka train_test_split
 
 from sklearn.model_selection import train_test_split
 
