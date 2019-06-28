@@ -106,6 +106,9 @@ or
 *# convert 'beer_level' into the 'CATEGORY' data type*
 - drinks['beer_level'] = pd.Categorical(drinks.beer_level, categories=['low', 'med', 'high'])
 
+*Ops there is a column missing, called owners. Create a random number Series from 15,000 to 73,000.*
+- cars.shape
+- cars['owners'] = np.random.randint(15000, 73000, cars.shape[0])
 
 *Import the necessary libraries*
 
