@@ -62,18 +62,105 @@ K-fold cross-validation overcomes this limitation and provides more reliable est
 
 But, train/test split is still useful because of its flexibility and speed
 
-*Linear regression: machine learning model that can be used for regression problems*
+### Linear regression: machine learning model that can be used for regression problems*
 
 from sklearn.linear_model import LinearRegression
 
+#compute correlation matrix
+ads.corr()
+
+DISPLAY CORRELATION MATRIX IN A SEABORN USING A HEATMAP
+
+sns.heatmap(ads.corr(), annot=True)
+
+LET'S ESTIMATE THE MODEL COEFFICIENTS
+
+Simple linear regression is an approach for predicting a continuous response using a single feature. It takes the following form: 
+
+𝑦=𝛽0+𝛽1𝑥
+
+y is the response
+
+x is the feature
+
+β0 is the intercept
+
+β1 is the coefficient for x
+
+β0 and β1 are called the model coefficients:
+
+We must "learn" the values of these coefficients to create our model.
+
+And once we've learned these coefficients, we can use the model to predict Sales.
+
+#create X and y
+
+feature_cols = ['TV']
+
+X = ads[feature_cols]
+
+y = ads.Sales
+
+#step 2. instantiate and 
+#step 3. fit
+
+linreg = LinearRegression()
+
+linreg.fit(X, y)
+
+#step 4.  print the coefficients
+
+print (linreg.intercept_)
+
+print (linreg.coef_)
+
+#step5. # calculate the R-squared value for the model
+
+y_pred = linreg.predict(X)
+
+metrics.r2_score(y, y_pred)
+
+#pair the feature names with the coefficients
+dict(zip(feature_cols, linreg.coef_))
+
+#define a function that accepts X and y and computes testing RMSE
+
+def train_test_rmse(X, y):
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1)
+    
+    linreg = LinearRegression()
+    
+    linreg.fit(X_train, y_train)
+    
+    y_pred = linreg.predict(X_test)
+    
+    return np.sqrt(metrics.mean_squared_error(y_test, y_pred))
 
 
+PART 8: COMPARING LINEAR REGRESSION WITH OTHER MODELS
 
+Advantages of linear regression:
 
+Simple to explain
 
+Highly interpretable
 
+Model training and prediction are fast
 
+No tuning is required (excluding regularization)
 
+Features don't need scaling
 
+Can perform well with a small number of observations
 
+Disadvantages of linear regression:
+
+Presumes a linear relationship between the features and the response
+
+Performance is (generally) not competitive with the best supervised learning methods due to high bias
+
+Sensitive to irrelevant features
+
+Can't automatically learn feature interactions
 
