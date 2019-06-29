@@ -164,3 +164,18 @@ Sensitive to irrelevant features
 
 Can't automatically learn feature interactions
 
+from sklearn.linear_model import LinearRegression
+
+from sklearn.ensemble import RandomForestRegressor
+
+from sklearn.preprocessing import LabelEncoder
+
+from sklearn.preprocessing import Normalizer
+
+from sklearn.cross_validation import cross_val_score
+
+from sklearn.preprocessing import Imputer
+
+from scipy.stats import skew
+
+import warnings
