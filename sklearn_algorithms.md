@@ -162,6 +162,44 @@ Performance is (generally) not competitive with the best supervised learning met
 
 Sensitive to irrelevant features
 
+### Cross Validation
+
+from sklearn.model_selection import KFold
+
+kf = KFold(n_splits=5, shuffle=False
+
+*cross validation for linear regression*
+
+from sklearn.model_selection import cross_val_score
+
+scores = cross_val_score(linreg, X, y, cv=10, scoring='neg_mean_squared_error')
+
+print (scores)
+
+#fix the sign of MSE scores
+
+mse_scores = -scores
+
+print ('MSE scores :',mse_scores)
+
+#convert from MSE to RMSE
+
+rmse_scores = np.sqrt(mse_scores)
+
+print ('RMSE : ', rmse_scores)
+
+#calculate the average RMSE
+
+print ('average RMSE :', rmse_scores.mean())
+
+
+
+from sklearn.model_selection import cross_val_score
+
+
+
+
+
 Can't automatically learn feature interactions
 
 from sklearn.linear_model import LinearRegression
